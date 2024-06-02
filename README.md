@@ -25,11 +25,13 @@ This repository documents the setup and configuration of a server as part of the
      version: 2
      ethernets:
        enp0s3:
-         addresses:
-           - 192.168.1.89/24
-         gateway4: 192.168.1.1
+         addresses: [10.5.124.67/24]
+         routes:
+            - to: 0.0.0.0/0
+              via: 10.5.124.1
+              on-link: true
          nameservers:
-           addresses: [8.8.8.8, 8.8.4.4]
+           addresses: [8.8.8.8]
    ```
 
 2. **Checking the VM IP Address:**
